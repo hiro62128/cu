@@ -1,0 +1,230 @@
+html
+  head
+    script(src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+    link(rel='stylesheet' media='screen' href='https://fontlibrary.org//face/bluu' type='text/css')
+    style(type='text/css').
+      body { font-size: 1em; background: #221E4E; padding: 2em; font-family: 'BluuNextBoldItalic', serif;}
+      .card { border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,.15); -webkit-box-shadow: 0 4px 10px rgba(0,0,0,.15); -moz-box-shadow: 0 4px 10px rgba(0,0,0,.15); background-color: #F1E6BA;}
+      .card-topper { border-top-right-radius: 8px; border-top-left-radius: 8px; padding: 8px 16px; font-size: 2em; font-weight: 600; text-align: center; background-color: #312823; color: #ffffff;}
+      .pic { max-width: 270px; max-height: 200px; padding-bottom: 1em; width: auto; height: auto;}
+      .titles {font-family: serif;}
+      #test { border: 2px solid black;}
+      #test td { border: 1px solid black;}
+  body
+    .container-fluid
+      .row
+        .col-sm-6.col-lg-4.col-xl-3.mb-5
+          .card
+            .card-topper.card-img-top=name
+            .card-body
+              img.rounded.mx-auto.d-block.pic(src=image)
+              .table-responsive
+                | 
+                table#test.table.table-bordered.table-hover
+                  tbody
+                    tr
+                      td.titles Alternate Names
+                      td#alt_names.text-center=alternate_names
+                    tr
+                      td.titles Species
+                      td.text-center=species
+                    tr
+                      td.titles Gender
+                      td.gender.text-center=gender
+                    tr
+                      td.titles House
+                      td.house.text-center=house
+                    tr
+                      td.titles Date of Birth
+                      td.text-center=dateOfBirth
+                    tr
+                      td.titles Year of Birth
+                      td.text-center=yearOfBirth
+                    tr
+                      td.titles Wizard
+                      td.text-center=wizard
+                    tr
+                      td.titles Ancestry
+                      td.text-center=ancestry
+                    tr
+                      td.titles Eye colour
+                      td.eyeColor.text-center=eyeColour
+                    tr
+                      td.titles Hair colour
+                      td.hairColor.text-center=hairColour
+                    tr
+                      td.titles(style='padding-top: 2em; padding-bottom: 2em;') Wand Wood
+                      td.text-center=wood
+                    tr
+                      td.titles(style='padding-top: 2em; padding-bottom: 2em;') Wand core
+                      td.text-center=core
+                    tr
+                      td.titles(style='padding-top: 2em; padding-bottom: 2em;') Wand Length
+                      td.text-center=length
+                    tr
+                      td.titles Patronus
+                      td.text-center=patronus
+                    tr
+                      td.titles Hogwarts Student
+                      td.isStudent.text-center=hogwartsStudent
+                    tr
+                      td.titles Hogwarts Staff
+                      td.isStaff.text-center=hogwartsStaff
+                    tr
+                      td.titles Actor
+                      td.text-center=actor
+                    tr
+                      td.titles Alternate Actors
+                      td.text-center=alternate_actors
+                    tr
+                      td.titles Alive
+                      td.isAlive.text-center=alive
+        |             
+    script.
+      var genders = document.getElementsByClassName("gender");
+      for(var i = 0; i < genders.length; i++)
+      {
+      if (genders[i].innerHTML === 'male')
+      {
+      genders[i].innerHTML = '&#x2642';
+      genders[i].style.color = '#0000ff';
+      genders[i].style.fontSize = '1.2em';
+      }
+      else
+      {
+      genders[i].innerHTML = '&#9792';
+      genders[i].style.color = '#ff3399';
+      genders[i].style.fontSize = '1.2em';
+      }
+      }
+      var houses = document.getElementsByClassName("house");
+      for(var i = 0; i < houses.length; i++)
+      {
+      if (houses[i].innerHTML == "Gryffindor")
+      {
+      houses[i].style.backgroundColor = '#7F0909';
+      houses[i].style.color = '#FFC500';
+      }
+      else if (houses[i].innerHTML == "Ravenclaw")
+      {
+      houses[i].style.backgroundColor = '#946B2D';
+      houses[i].style.color = '#000A90';
+      }
+      else if (houses[i].innerHTML == "Hufflepuff")
+      {
+      houses[i].style.backgroundColor = '#000000';
+      houses[i].style.color = '#EEE117';
+      }
+      else if (houses[i].innerHTML == "Slytherin")
+      {
+      houses[i].style.backgroundColor = '#AAAAAA';
+      houses[i].style.color = '#0D6217';
+      }
+      }
+      var eyes = document.getElementsByClassName("eyeColor");
+      for(var i = 0; i < eyes.length; i++)
+      {
+      if (eyes[i].innerHTML == "green")
+      {
+      eyes[i].style.color = 'green';
+      }
+      else if (eyes[i].innerHTML == "brown")
+      {
+      eyes[i].style.color = 'brown';
+      }
+      else if (eyes[i].innerHTML == "blue")
+      {
+      eyes[i].style.color = 'blue';
+      }
+      else if (eyes[i].innerHTML == "grey")
+      {
+      eyes[i].style.color = 'grey';
+      }
+      else if (eyes[i].innerHTML == "red")
+      {
+      eyes[i].style.color = 'red';
+      }
+      else if (eyes[i].innerHTML == "yellow")
+      {
+      eyes[i].style.color = '#b3b300';
+      }
+      else
+      {
+      eyes[i].style.color = 'black';
+      }
+      }
+      var hair = document.getElementsByClassName("hairColor");
+      for(var i = 0; i < hair.length; i++)
+      {
+      if (hair[i].innerHTML == "green")
+      {
+      hair[i].style.color = 'green';
+      }
+      else if (hair[i].innerHTML == "brown")
+      {
+      hair[i].style.color = 'brown';
+      }
+      else if (hair[i].innerHTML == "blue")
+      {
+      hair[i].style.color = 'blue';
+      }
+      else if (hair[i].innerHTML == "grey")
+      {
+      hair[i].style.color = 'grey';
+      }
+      else if (hair[i].innerHTML == "red")
+      {
+      hair[i].style.color = '#e68a00';
+      }
+      else if (hair[i].innerHTML == "blonde")
+      {
+      hair[i].style.color = '#b3b300';
+      }
+      else
+      {
+      hair[i].style.color = 'black';
+      }
+      }
+      var students = document.getElementsByClassName("isStudent");
+      for(var i = 0; i < students.length; i++)
+      {
+      if (students[i].innerHTML === 'true')
+      {
+      students[i].innerHTML = '&#10004';
+      students[i].style.color = 'green';
+      }
+      else
+      {
+      students[i].innerHTML = '&#10006';
+      students[i].style.color = 'red';
+      }
+      }
+      var staff = document.getElementsByClassName("isStaff");
+      for(var i = 0; i < staff.length; i++)
+      {
+      if (staff[i].innerHTML === 'true')
+      {
+      staff[i].innerHTML = '&#10004';
+      staff[i].style.color = 'green';
+      }
+      else
+      {
+      staff[i].innerHTML = '&#10006';
+      staff[i].style.color = 'red';
+      }
+      }
+      var alive = document.getElementsByClassName("isAlive");
+      for(var i = 0; i < alive.length; i++)
+      {
+      if (alive[i].innerHTML === 'true')
+      {
+      alive[i].innerHTML = '&#10004';
+      alive[i].style.color = 'green';
+      }
+      else
+      {
+      alive[i].innerHTML = '&#10006';
+      alive[i].style.color = 'red';
+      }
+      }
